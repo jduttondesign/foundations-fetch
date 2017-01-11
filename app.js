@@ -1,12 +1,35 @@
+
 ;(function () {
-	window.app = { myApp: "yes"};
-})();//wrap in an iffy 
+	const app = angular.module ("fetchApp", []); 
+app.controller("MainController", function ($scope, requestService){
+	$scope.responses = [];
+	$scope.url = "http://httpstat.us/200";
 
-//
-// ;(function() {
-// 	var myFunc = () => console.log('function 1')
-// })();
+	$scope.fetch = () => {};
+		requestService.get($scope.url).then((success) => {
+			const response = new Response(success);
+			$scope.responses.push(response);
+		}, (error) => {
+			debugger
+			//do something else
+		});
+	};
+});
 
-// ;(function() {
-// 	var myFunc = () => console.log('function 2')
-// })();
+app.service('requestService', function ($http) {
+	this.get = (url) => $http.get(url);
+});
+
+	app.factory('Response', function (){
+		const Response = function (ResponseData){
+			this.statusCode = responseData.status;
+		};
+		
+		return Response;
+	});
+})();
+
+
+
+
+
