@@ -9,7 +9,7 @@
         $scope.responses.push(response);
       }, (error) => {
         
-        //do something else
+        
       });
     };
   });

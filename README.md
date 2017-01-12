@@ -1,4 +1,4 @@
- #Fetch
+#Fetch
 
 The goal of this exercise is to assist the student in understanding the request and response cycle of the HTTP protocol while reviewing aspects of AngularJS, AJAX. This is a multi-part exercise requiring both in-class and ouside of class work.
 
